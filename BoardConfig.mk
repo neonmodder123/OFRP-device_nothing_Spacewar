@@ -165,3 +165,13 @@ TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery"
 # Vibrator
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SKIP_ADDITIONAL_FSTAB := true
+
+# Testing
+TARGET_PREBUILT_DTB := device/nothing/Spacewar/prebuilt/dtbs/Spacewar.dtb
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_INCLUDE_DTB_IN_VENDOR_BOOT := false
+TARGET_KERNEL_SOURCE := kernel/nothing/sm7325
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CONFIG := vendor/lahaina-qgki_defconfig
